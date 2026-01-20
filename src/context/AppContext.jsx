@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
 
 const AppContext = createContext()
 
@@ -16,6 +16,10 @@ export const AppContextProvider = ({children}) =>{
     const fetchUser = async () =>{
         setUser(dummyUserData)
     }
+
+    useEffect(() =>{
+        fetchUser()
+    },[])
 
     const value={}
     return(
